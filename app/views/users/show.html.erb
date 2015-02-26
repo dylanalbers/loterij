@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<h1>Informatie</h1>
 
 <p>
   <strong>Naam:</strong>
@@ -14,14 +14,15 @@
 <% tempUser = @users.sample %>
 
 <% if @user != tempUser %>
-	Helaas, je hebt niet gewonnen!
+	Helaas, deze persoon heeft niet gewonnen!
 <% end %>
 
 <% if @user == tempUser %>
-	Gefeliciteerd je hebt gewonnen!
+	Gefeliciteerd deze persoon heeft gewonnen!
 <% end %>
 
 <br>
 <br>
-<!--<%= link_to 'Pas Aan', edit_user_path(@user) %> |-->
-<%= link_to 'Probeer opnieuw', new_user_path %>
+<%= link_to 'Bekijk alle inschrijvingen', users_path %> | 
+<%= link_to 'Pas Aan', edit_user_path(@user) %> |
+<%= link_to 'Registreer je nu (opniew)', new_user_path %>
