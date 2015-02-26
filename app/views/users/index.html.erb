@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Alle Registraties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Naam</th>
+      <th>Email</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Bekijk', user %></td>
+        <!--<td><%= link_to 'Pas Aan', edit_user_path(user) %></td>-->
+        <td><%= link_to 'Verwijder', user, method: :delete, data: { confirm: 'Weet je het zeker?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Registreer', new_user_path %>
